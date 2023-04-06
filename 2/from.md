@@ -5,15 +5,15 @@
 > First published Wed Sep 1, 1999; substantive revision Fri Dec 16, 2022
 
 Intuitionistic logic encompasses the general principles of logical reasoning which have been abstracted by logicians from intuitionistic mathematics, as developed by L. E. J. Brouwer beginning in his [1907] and [1908].
-Because these principles also hold for Russian recursive mathematics and the constructive analysis of E. Bishop and his followers, intuitionistic logic may be considered the logical basis of constructive mathematics.
+Because these principles also hold for Russian recursive mathematics and the constructive analysis of E. Bishop and his followers, intuitionistic logic may be considered the logical basis of [constructive mathematics](https://plato.stanford.edu/entries/mathematics-constructive/).
 Although intuitionistic analysis conflicts with classical analysis, intuitionistic Heyting arithmetic is a subsystem of classical Peano arithmetic.
 It follows that intuitionistic propositional logic is a proper subsystem of classical propositional logic, and pure intuitionistic predicate logic is a proper subsystem of pure classical predicate logic.
 
-Philosophically, intuitionism differs from logicism by treating logic as a part of mathematics rather than as the foundation of mathematics; from finitism by allowing constructive reasoning about potentially uncountable structures (e.g., monotone bar induction on the tree of potentially infinite sequences of natural numbers); and from Platonism by viewing mathematical objects as mental constructs with no independent ideal existence.
-Hilbert’s formalist program, to justify classical mathematics by reducing it to a formal system whose consistency should be established by finitistic (hence constructive) means, was the most powerful contemporary rival to Brouwer’s developing intuitionism.
+Philosophically, [intuitionism](https://plato.stanford.edu/entries/intuitionism/) differs from [logicism](https://plato.stanford.edu/entries/logicism/) by treating logic as a part of mathematics rather than as the foundation of mathematics; from finitism by allowing constructive reasoning about potentially uncountable structures (e.g., monotone bar induction on the tree of potentially infinite sequences of natural numbers); and from [Platonism](https://plato.stanford.edu/entries/platonism-mathematics/) by viewing mathematical objects as mental constructs with no independent ideal existence.
+Hilbert’s [formalist program](https://plato.stanford.edu/entries/hilbert-program/), to justify classical mathematics by reducing it to a formal system whose consistency should be established by finitistic (hence constructive) means, was the most powerful contemporary rival to Brouwer’s developing intuitionism.
 In his 1912 essay Intuitionism and Formalism Brouwer correctly predicted that any attempt to prove the consistency of complete induction on the natural numbers would lead to a vicious circle.
 
-Brouwer rejected formalism per se but admitted the potential usefulness of formulating general logical principles expressing intuitionistically correct constructions, such as modus ponens.
+Brouwer rejected [formalism](https://plato.stanford.edu/entries/formalism-mathematics/) per se but admitted the potential usefulness of formulating general logical principles expressing intuitionistically correct constructions, such as modus ponens.
 Formal systems for intuitionistic propositional and predicate logic and arithmetic were fully developed by Heyting [1930], Gentzen [1935] and Kleene [1952].
 Gödel [1933] proved the equiconsistency of intuitionistic and classical theories.
 Beth [1956] and Kripke [1965] provided semantics with respect to which intuitionistic logic is correct and complete, although the completeness proofs for intuitionistic predicate logic require some classical reasoning.
@@ -40,7 +40,7 @@ Brouwer [1908] observed that LEM was abstracted from finite situations, then ext
 For example, let $x,y$ range over the natural numbers $0,1,2,…$ and let $B(y)$ abbreviate $(prime(y) \And prime(y+2))$, where $prime(y)$ expresses “$y$ is a prime number.”
 Then $\forall y(B(y) \lor \lnot B(y))$ holds intuitionistically as well as classically, because in order to determine whether or not a natural number is prime we need only check whether or not it has a divisor strictly between itself and $1$.
 
-But if $A(x)$ abbreviates $\exist y (y > x \And B(y))$, then in order to assert $\forall x(A(x) \lor \lnot A(x))$ intuitionistically we would need an effective (cf. the Church-Turing thesis) method to determine whether or not there is a pair of twin primes larger than an arbitrary natural number x, and so far no such method is known.
+But if $A(x)$ abbreviates $\exist y (y > x \And B(y))$, then in order to assert $\forall x(A(x) \lor \lnot A(x))$ intuitionistically we would need an effective (cf. the [Church-Turing thesis](https://plato.stanford.edu/entries/church-turing/)) method to determine whether or not there is a pair of twin primes larger than an arbitrary natural number x, and so far no such method is known.
 An obvious semi-effective method is to list the prime number pairs using a refinement of Eratosthenes’ sieve (generating the natural numbers one by one and striking out every number $y$ which fails to satisfy $B(y)$), and if there is a pair of twin primes larger than $x$ this method will eventually find the first one.
 However, $\forall xA(x)$ expresses the Twin Primes Conjecture, which has not yet been proved or disproved, so in the present state of our knowledge we can assert neither $\forall x(A(x) \lor \lnot A(x))$ nor $\forall xA(x) \lor \lnot ∀xA(x)$.
 
@@ -70,13 +70,13 @@ On the other hand:
 
 - The negative fragment of intuitionistic logic (without $∨$ or $∃$) contains a faithful translation of classical logic, and similarly for intuitionistic and classical arithmetic.
 
-- Intuitionistic arithmetic can consistently be extended by axioms which contradict classical arithmetic, enabling the formal study of recursive mathematics.
+- Intuitionistic arithmetic can consistently be extended by axioms which contradict classical arithmetic, enabling the formal study of [recursive mathematics](https://plato.stanford.edu/entries/mathematics-constructive/).
 
-- Brouwer’s controversial intuitionistic analysis, which conflicts with LEM, can be formalized and shown consistent relative to a classically and intuitionistically correct subtheory.
+- Brouwer’s controversial [intuitionistic analysis](https://plato.stanford.edu/entries/intuitionism/), which conflicts with LEM, can be formalized and shown consistent relative to a classically and intuitionistically correct subtheory.
 
 ## 2. Intuitionistic First-Order Predicate Logic
 
-Formalized intuitionistic logic is naturally motivated by the informal Brouwer-Heyting-Kolmogorov explanation of intuitionistic truth, outlined in the entries on intuitionism in the philosophy of mathematics and the development of intuitionistic logic.
+Formalized intuitionistic logic is naturally motivated by the informal Brouwer-Heyting-Kolmogorov explanation of intuitionistic truth, outlined in the entries on [intuitionism in the philosophy of mathematics](https://plato.stanford.edu/entries/intuitionism/) and [the development of intuitionistic logic](https://plato.stanford.edu/entries/intuitionistic-logic-development/).
 The constructive independence of the logical operations $\And , \lor , \to , \lnot , \forall , \exists$ contrasts with the classical situation, where e.g., $A \lor B$ is equivalent to $\lnot (\lnot A \And \lnot B)$, and $\exists xA(x)$ is equivalent to $\lnot \forall x \lnot A(x)$.
 From the B-H-K viewpoint, a sentence of the form $A \lor B$ asserts that either a proof of $A$, or a proof of $B$, has been constructed; while $\lnot (\lnot A \And \lnot B)$ asserts that an algorithm has been constructed which would effectively convert any pair of constructions proving $\lnot A$ and $\lnot B$ respectively, into a proof of a known contradiction.
 
@@ -174,7 +174,7 @@ Brouwer himself proved that “absurdity of absurdity of absurdity is equivalent
 ### 2.2 Alternative formalisms, and the deduction theorem
 
 The Hilbert-style system $\mathbf{H–IQC}$ is useful for metamathematical investigations of intuitionistic logic, but its forced linearization of deductions and its preference for axioms over rules make it an awkward instrument for establishing derivability.
-A natural deduction system $\mathbf{N–IQC}$ for intuitionistic predicate logic results from the deductive system $\mathbf{D}$, presented in Section 3 of the entry on classical logic in this Encyclopedia, by omitting the symbol and rules for identity, and replacing the classical rule (DNE) of double negation elimination by the intuitionistic negation elimination rule expressing ex falso:
+A natural deduction system $\mathbf{N–IQC}$ for intuitionistic predicate logic results from the deductive system $\mathbf{D}$, presented in Section 3 of the entry on [classical logic](https://plato.stanford.edu/entries/logic-classical/) in this Encyclopedia, by omitting the symbol and rules for identity, and replacing the classical rule (DNE) of double negation elimination by the intuitionistic negation elimination rule expressing ex falso:
 
 (INE) If $F$ entails $A$ and $F$ entails $\lnot A$, then $F$ entails $B$.
 
@@ -233,7 +233,7 @@ Both $\mathbf{IPC}$ and $\mathbf{IQC}$ satisfy interpolation theorems, e.g.: If 
 These topics are treated in Kleene [1952] and Troelstra and Schwichtenberg [2000].
 
 While identity can of course be added to intuitionistic logic, for applications (e.g., to arithmetic) the equality symbol is generally treated as a distinguished predicate constant satisfying the axioms for an equivalence relation (reflexivity, symmetry and transitivity) and additional nonlogical axioms (e.g., the primitive recursive definitions of addition and multiplication).
-Identity is decidable, intuitionistically as well as classically, but intuitionistic extensional equality is not always decidable; see the discussion of Brouwer’s continuity axioms in Section 3 of the entry on intuitionism in the philosophy of mathematics.
+Identity is decidable, intuitionistically as well as classically, but intuitionistic extensional equality is not always decidable; see the discussion of Brouwer’s continuity axioms in Section 3 of the entry on [intuitionism in the philosophy of mathematics](https://plato.stanford.edu/entries/intuitionism/).
 
 ## 3. Intuitionistic Number Theory (Heyting Arithmetic) HA
 
@@ -395,7 +395,7 @@ The negative translation of each instance of the schema of mathematical inductio
 
 - (I), (II), (III) and (IV) hold also for number theory.
 
-Gödel [1933e] interpreted these results as showing that intuitionistic logic and arithmetic are richer than classical logic and arithmetic, because the intuitionistic theory distinguishes formulas which are classically equivalent, and has the same consistency strength as the classical theory.
+Gödel [1933e] interpreted these results as showing that intuitionistic logic and arithmetic are richer than classical logic and arithmetic, because the intuitionistic theory distinguishes formulas which are classically equivalent, and has the same [consistency strength](https://plato.stanford.edu/entries/hilbert-program/) as the classical theory.
 In particular, Gödel’s incompleteness theorems apply to $\mathbf{HA}$ as well as to $\mathbf{PA}$.
 
 Direct attempts to extend the negative interpretation to analysis fail because the negative translation of the countable axiom of choice is not a theorem of intuitionistic analysis.
@@ -751,7 +751,7 @@ Mints, Olkhovikov and Urquhart [2013] showed that $CD$ does not have the interpo
 
 ### 6.2 Basic Intuitionistic Modal Logic
 
-This section, at present, offers only a glimpse of intuitionistic modal logic. Any classical modal logic has an intuitionistic companion defined by replacing the underlying classical propositional or predicate logic by the corresponding intuitionistic propositional or predicate logic. Simpson [1994] and Plotkin and Stirling [1986] provide a general framework for intuitionistic modal logics which is adaptable to a multitude of uses.
+This section, at present, offers only a glimpse of intuitionistic modal logic. Any classical [modal logic](https://plato.stanford.edu/entries/logic-modal/) has an intuitionistic companion defined by replacing the underlying classical propositional or predicate logic by the corresponding intuitionistic propositional or predicate logic. Simpson [1994] and Plotkin and Stirling [1986] provide a general framework for intuitionistic modal logics which is adaptable to a multitude of uses.
 
 The basic intuitionistic modal propositional logic $\mathbf{iK}$ has as axioms:
 
@@ -775,20 +775,20 @@ An additional modality $\Diamond$ can be taken as primitive, or defined by $\Dia
 
 ## 6.3 Advanced topics
 
-Brouwer’s influence on Gödel was significant, although Gödel never became an intuitionist. Gödel’s [1933f] translation of intuitionistic propositional logic into the modal logic $\mathbf{S4}$ is described in Section 2.5 of the entry on Gödel and in Troelstra’s introductory note to the translation of [1933f] in Volume I of Gödel’s Collected Works. See also Mints [2012]. Kripke models for modal logic predated those for intuitionistic logic.
+Brouwer’s influence on Gödel was significant, although Gödel never became an intuitionist. Gödel’s [1933f] translation of intuitionistic propositional logic into the [modal logic](https://plato.stanford.edu/entries/logic-modal/) $\mathbf{S4}$ is described in Section 2.5 of the entry on Gödel and in Troelstra’s introductory note to the translation of [1933f] in Volume I of Gödel’s Collected Works. See also Mints [2012]. Kripke models for modal logic predated those for intuitionistic logic.
 
 Alternatives to Kripke and Beth semantics for intuitionistic propositional and predicate logic include the topological interpretation of Stone [1937], Tarski [1938] and Mostowski [1948] (cf. Rasiowa and Sikorski [1963], Rasiowa [1974]), which was extended to intuitionistic analysis by Scott [1968] and Krol [1978]. M. Hyland [1982] defined the effective topos Eff and proved that its logic is intuitionistic. For a very informative discussion of semantics for intuitionistic logic and mathematics by W. Ruitenberg, and an interesting new perspective by G. Bezhanishvili and W. Holliday, see Other Internet Resources (below).
 
 One alternative to realizability semantics for intuitionistic arithmetic is Gödel’s [1958] “Dialectica” interpretation, which associates with each formula $B$ of $L(\mathbf{HA})$ a quantifier-free formula $B_D$ in the language of intuitionistic arithmetic of all finite types. The “Dialectica” interpretation of $B$, call it $B_D$, is $\exists Y \forall x B_D(Y, x)$. If $B$ is a closed theorem of $\mathbf{HA}$, then $B_D(F, x)$ is provable for some term $F$ in Gödel’s theory $T$ of “primitive recursive” functionals of higher type. The translation from $B$ to $B^D$ requires the axiom of choice (at all finite types), MP and IP, so is not strictly constructive; however, the number-theoretic functions expressible by terms $F$ of $T$ are precisely the provably recursive functions of $\mathbf{HA}$ (and of $\mathbf{PA}$).
 The interpretation was extended to analysis by Spector [1962]; cf. Howard [1973]. Clear expositions, and additional references, are to be found in Troelstra’s introduction to the English translation in Gödel [1990] of the original Dialectica article, in Avigad and Feferman [1998], and in Ferreira [2008].
 
-While $\mathbf{HA}$ is a proper part of classical arithmetic, the intuitionistic attitude toward mathematical objects results in a theory of real numbers (cf. sections 3.4–3.7 of the entry on intuitionism in the philosophy of mathematics) diverging from the classical.
+While $\mathbf{HA}$ is a proper part of classical arithmetic, the intuitionistic attitude toward mathematical objects results in a theory of real numbers (cf. sections 3.4–3.7 of the entry on [intuitionism in the philosophy of mathematics](https://plato.stanford.edu/entries/intuitionism/)) diverging from the classical.
 Kleene’s function-realizability interpretation, developed to prove the consistency of his formalization $\mathbf{FIM}$ of the intuitionistic theory of sequences (“intuitionistic analysis”), changes the interpretation of arithmetical formulas; for example, $\lnot \lnot \forall x(A(x) \lor \lnot A(x))$ is function-realizable for every arithmetical formula $A(x)$.
 In the language of analysis, Markov’s Principle and the negative translation of the countable axiom of choice are among the many non-intuitionistic principles which are function-realizable (by classical arguments) and hence consistent with $\mathbf{FIM}$; cf. Kleene [1965], Vesley [1972] and Moschovakis [2003].
 
 Concrete and abstract realizability semantics for a wide variety of formal systems have been developed and studied by logicians and computer scientists; cf. Troelstra [1998] and van Oosten [2002] and [2008]. Variations of the basic notions are especially useful for establishing relative consistency and relative independence of the nonlogical axioms in theories based on intuitionistic logic; some examples are Moschovakis [1971], Lifschitz [1979], and the realizability notions for constructive and intuitionistic set theories developed by Rathjen [2006, 2012] and Chen [2012]. Early abstract realizability notions include the slashes of Kleene [1962, 1963] and Aczel [1968], and Läuchli [1970]. Kohlenbach, Avigad and others have developed realizability interpretations for parts of classical mathematics.
 
-Artemov’s justification logic is an alternative interpretation of the B-H-K explanation of the intuitionistic connectives and quantifiers, with (idealized) proofs playing the part of realizing objects.
+Artemov’s [justification logic](https://plato.stanford.edu/entries/logic-justification/) is an alternative interpretation of the B-H-K explanation of the intuitionistic connectives and quantifiers, with (idealized) proofs playing the part of realizing objects.
 See also Artemov and Iemhoff [2007].
 
 Another line of research in intuitionistic logic concerns Brouwer’s controversial “creating subject counterexamples” to principles of classical analysis (such as Markov’s Principle) which could not be refuted on the basis of the theory $\mathbf{FIM}$ of Kleene and Vesley [1965]. By weakening Kleene’s strong form of Brouwer’s principle of continuous choice, and adding an axiom he called Kripke’s Schema (KP), Myhill [1967] formalized Brouwer’s creating subject arguments in the language of intuitionistic analysis.
