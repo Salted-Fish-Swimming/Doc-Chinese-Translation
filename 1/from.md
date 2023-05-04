@@ -1,5 +1,7 @@
 # Intuitionistic Type Theory
 
+> [From](https://plato.stanford.edu/entries/type-theory-intuitionistic/)
+> 
 > First published Fri Feb 12, 2016; substantive revision Mon Jun 8, 2020
 
 Intuitionistic type theory (also constructive type theory or Martin-Löf type theory) is a formal logical system and philosophical foundation for constructive mathematics.
