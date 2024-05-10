@@ -30,6 +30,12 @@ In this article, we review the evolution of the different key components of mode
 
 > 介绍
 
+![Figure 1.](./Fig-1.png)
+
+> Early FPGA architecture with programmable logic and IOs vs. modern heterogeneous FPGA architecture with RAMs, DSPs, and other hard blocks. All blocks are interconnected using bit-level programmable routing.
+
+> 图片 1. 带有可编程逻辑和IOs的早期FPGA架构 vs. 带有ram、dsp和其他硬块的现代异构FPGA架构。所有块都使用位级可编程路由相互连接。
+
 Field-programmable gate arrays (FPGAs) are reconfigurable computer chips that can be programmed to implement any digital hardware circuit.
 
 > 现场可编程门阵列(fpga)是可重新配置的计算机芯片，可以通过编程来实现任何数字硬件电路。
@@ -128,6 +134,12 @@ We highlight key innovations in the design and implementation of each of these c
 
 > FPGA 架构评估
 
+![Figure 2.](./Fig-2.png)
+
+> Figure 2. FPGA architecture evaluation flow.
+
+> 图2. FPGA架构评估流程。
+
 As shown in Fig. 2, the FPGA architecture evaluation flow consists of three main components: a suite of benchmark applications, an architecture model, and a CAD system.
 
 > 如图2所示，FPGA架构评估流程由三个主要部分组成:一套基准测试应用程序、一个架构模型和一个CAD系统。
@@ -136,19 +148,20 @@ Unlike an ASIC built for a specific functionality, an FPGA is a general-purpose 
 
 > 与为特定功能构建的ASIC不同，FPGA是为许多用例设计的通用平台，其中一些用例在FPGA架构时甚至不存在。
 
-Therefore, an FPGA architecture is evalu-ated based on its efficiency when implementing a wide variety of benchmark designs that are representative of the key FPGA markets and application domains.
+Therefore, an FPGA architecture is evaluated based on its efficiency when implementing a wide variety of benchmark designs that are representative of the key FPGA markets and application domains.
 
-> 因此，在实现各种代表关键FPGA市场和应用领域的基准设计时，基于FPGA架构的效率进行评估。
+> 因此，在实现各种代表关键FPGA市场和应用领域的基准设计时，FPGA架构是根据其效率来评估的。
 
-Typically, each FPGA vendor has a carefully selected set of bench-mark designs collected from proprietary system imple-mentations and various customer applications.
+Typically, each FPGA vendor has a carefully selected set of benchmark designs collected from proprietary system implementations and various customer applications.
 
-> 通常，每个FPGA供应商都有一组精心挑选的基准设计，这些设计来自专有系统实现和各种客户应用程序。
+>通常，每个FPGA供应商都有一组精心挑选的基准设计，这些设计来自专有系统实现和各种客户应用程序。
 
-There are also several open-source benchmark suites such as the classic MCNC20 [13], the VTR [14], and the Titan23 [15] suites which are commonly used in academic FPGA archi-tecture and CAD research.
+There are also several open-source benchmark suites such as the classic MCNC20 [13], the VTR [14], and the Titan23 [15] suites which are commonly used in academic FPGA architecture and CAD research.
 
 > 还有一些开源基准套件，如经典的MCNC20 [13]， VTR[14]和Titan23[15]套件，这些套件通常用于学术FPGA架构和CAD研究。
 
-While early academic FPGA re-search used the MCNC suite of designs, these circuits are now too small (thousands of logic primitives) and simple (only IOs and logic) to represent modern FPGA use cases.
+
+While early academic FPGA research used the MCNC suite of designs, these circuits are now too small (thousands of logic primitives) and simple (only IOs and logic) to represent modern FPGA use cases.
 
 > 虽然早期的FPGA学术研究使用了MCNC设计套件，但这些电路现在太小(数千个逻辑原语)且简单(只有IOs和逻辑)，无法代表现代FPGA用例。
 
@@ -158,27 +171,27 @@ The VTR and particularly the Titan suite are larger and more complex, making the
 
 ---
 
-The second part of the evaluation flow is the FPGA ar-chitecture model.
+The second part of the evaluation flow is the FPGA architecture model.
 
 > 评估流程的第二部分是FPGA架构模型。
 
-The design of an FPGA involves many different decisions from architecture-level organization (e.g. number and type of blocks, distribution of wire seg-ment lengths, size of logic clusters and logic elements) down to transistor-level circuit implementation (e.g. pro-grammable switch type, routing buffer transistor sizing, register implementation).
+The design of an FPGA involves many different decisions from architecture-level organization (e.g. number and type of blocks, distribution of wire segment lengths, size of logic clusters and logic elements) down to transistor-level circuit implementation (e.g. programmable switch type, routing buffer transistor sizing, register implementation).
 
 > FPGA的设计涉及许多不同的决策，从架构级组织(例如，块的数量和类型，线段长度的分布，逻辑簇和逻辑元件的大小)到晶体管级电路实现(例如，可编程开关类型，路由缓冲晶体管尺寸，寄存器实现)。
 
-It also involves different imple-mentation styles; the logic blocks and programmable routing are designed and laid out as full-custom circuits, while most hardened blocks (e.g. DSPs) mix standard-cell and full-custom design for the block core and peripher-als, respectively.
+It also involves different implementation styles; the logic blocks and programmable routing are designed and laid out as full-custom circuits, while most hardened blocks (e.g. DSPs) mix standard-cell and full-custom design for the block core and peripherals, respectively.
 
-> 它还涉及到不同的实现风格;逻辑块和可编程路由被设计和布局为全定制电路，而大多数硬化块(例如dsp)分别混合了标准单元和全定制设计的块核心和外设。
+> 它还涉及到不同的实现风格;逻辑模块和可编程路由被设计和布置为完全定制电路，而大多数硬化模块(例如dsp)分别混合了模块核心和外围设备的标准单元和完全定制设计。
 
-Some blocks (RAM, IO) even include sig-nificant analog circuitry.
+Some blocks (RAM, IO) even include significant analog circuitry.
 
 > 一些块(RAM, IO)甚至包括重要的模拟电路。
 
-All these different components need to be carefully modeled to evaluate the FPGA archi-tecture in its entirety.
+All these different components need to be carefully modeled to evaluate the FPGA architecture in its entirety.
 
 > 所有这些不同的组件都需要仔细建模，以全面评估FPGA架构。
 
-This is typically captured using an architecture description file that specifies the organiza-tion and types of the different FPGA blocks and the rout-ing architecture, in addition to area, timing and power models obtained from circuit-level implementations for each of these components.
+This is typically captured using an architecture description file that specifies the organization and types of the different FPGA blocks and the routing architecture, in addition to area, timing and power models obtained from circuit-level implementations for each of these components.
 
 > 这通常是使用架构描述文件捕获的，该文件指定了不同FPGA块和路由架构的组织和类型，以及从每个这些组件的电路级实现中获得的面积、时序和功率模型。
 
@@ -212,11 +225,11 @@ FPGAs are never designed for only one application, so these metrics are averaged
 
 > fpga从来都不是为一个应用程序设计的，所以这些指标在所有基准测试中都是平均的。
 
-Finally, the overall evaluation blends these average area, delay, and power metrics appropriately depending on the archi-tecture goal (e.g. high performance or low power).
+Finally, the overall evaluation blends these average area, delay, and power metrics appropriately depending on the architecture goal (e.g. high performance or low power).
 
 > 最后，总体评估根据架构目标(例如高性能或低功耗)适当地混合这些平均面积、延迟和功耗指标。
 
-Other metrics such as CAD tool runtime and whether or not the CAD tools fail to route some benchmarks on an architec-ture are also often considered
+Other metrics such as CAD tool runtime and whether or not the CAD tools fail to route some benchmarks on an architecture are also often considered
 
 > 其他指标，如CAD工具运行时，以及CAD工具是否不能在体系结构上路由一些基准，也经常被考虑
 
@@ -238,7 +251,7 @@ On the other hand, if a hard block is not usable by an application circuit, its 
 
 > 另一方面，如果一个硬块不能被应用电路使用，它的硅面积就被浪费了;FPGA用户希望在未使用的硬块区域中有更多可用的通用逻辑块。
 
-The impact of this new hard block on the programmable routing must also be considered—does it need more inter-connect or lead to slow routing paths to and from the block? To evaluate whether a specific functionality should be hard-ened or not, both the cost and gain of hardening it have to be quantified empirically using the flow described in this section.
+The impact of this new hard block on the programmable routing must also be considered—does it need more inter-connect or lead to slow routing paths to and from the block? To evaluate whether a specific functionality should be hardened or not, both the cost and gain of hardening it have to be quantified empirically using the flow described in this section.
 
 > 这种新的硬块对可编程路由的影响也必须考虑——它是否需要更多的互连，还是导致往返块的路由路径变慢?为了评估一个特定的功能是否应该加固，加固的成本和收益都必须使用本节中描述的流程进行量化。
 
@@ -267,6 +280,12 @@ While we describe the key results without detailing the experimental methodology
 The earliest reconfigurable computing devices were programmable array logic (PAL) architectures.
 
 > 最早的可重构计算设备是可编程阵列逻辑(PAL)架构。
+
+![Figure 3.](./Fig-3.png)
+
+> Figure 3. Programmable array logic (PAL) architecture with an and array feeding an or array. The crosses are reconfigurable switches that are used to program any Boolean expression as a two-level sum-of-products function.
+
+> 图3. 可编程阵列逻辑(PAL)架构，一个和阵列馈入一个或阵列。十字是可重新配置的开关，用于将任何布尔表达式编程为两级乘积和函数。
 
 PALs consisted of an array of and gates feeding another array of or gates, as shown in Fig. 3, and could implement any Boolean logic expression as a two-level sum-of-products function.
 
@@ -320,6 +339,12 @@ K input signals are used as multiplexer select lines to choose an output from th
 
 > K个输入信号用作多路选择线，从真值表的2^K值中选择一个输出。
 
+![Figure 4.](./Fig-4.png)
+
+> Figure 4. (a) Transistor-level implementation of a 4-LUT with internal buffers between the second and third LUT stages, (b) Two-level multiplexer circuitry, (c) Basic logic element (BLE), and (d) Logic block (LB) internal architecture.
+
+> 图4. (a)在第二级和第三级LUT之间具有内部缓冲区的4-LUT的晶体管级实现，(b)双电平多路复用电路，(c)基本逻辑元件(BLE)和(d)逻辑块(LB)内部架构。
+
 Fig. 4(a) shows the transistor-level circuit implementation of a 4-LUT using pass-transistor logic.
 
 > 图4(a)显示了使用通管逻辑的4- lut的晶体管级电路实现。
@@ -370,7 +395,7 @@ As K increases, more functionality can be packed into a single LUT, reducing not
 
 > 随着K的增加，可以将更多的功能打包到单个LUT中，这不仅减少了所需LUT的数量，还减少了关键路径上的逻辑级别数量，从而提高了性能。
 
-In addition, the demand for inter-LB routing decreases as more connections are captured into the fast local intercon-nect by increasing N.
+In addition, the demand for inter-LB routing decreases as more connections are captured into the fast local interconnect by increasing N.
 
 > 此外，随着N的增加，更多的连接被捕获到快速的本地互连中，对lb间路由的需求也会减少。
 
@@ -416,6 +441,12 @@ A fracturable {K, M}-LUT can be configured as a single LUT of size K or can be f
 
 > 一个可断裂的{K, M}-LUT可以被配置为大小为K的单个LUT，也可以被分割成两个大小不超过K - 1的LUT，它们总共使用不超过K + M个不同的输入。
 
+![Figure 5.](./Fig-5.png)
+
+> Figure 5. 6-LUT fracturable into two 5-LUTs with (a) no additional input ports, leading to 5 shared inputs (A-E) or (b) two additional input ports and steering multiplexers, leading to only 2 shared inputs (C, D).
+
+> 图5. 6-LUT可断裂成两个5- lut， (a)没有额外的输入端口，导致5个共享输入(a - e)或(b)两个额外的输入端口和转向多路复用器，导致只有2个共享输入(C, D)。
+
 Fig. 5(a) shows that a 6-LUT is internally composed of two 5-LUTs plus a 2:1 multiplexer.
 
 > 图5(a)示出6-LUT内部由两个5- lut加一个2:1多路复用器组成。
@@ -444,7 +475,7 @@ Pairs of smaller LUTs could also be implemented without any shared inputs, such 
 
 > 对较小的lut也可以在没有任何共享输入的情况下实现，例如两个4- lut或一个5-LUT和一个3-LUT。
 
-With a frac-turable 6-LUT, larger logic functions are implemented in 6-LUTs reducing the logic levels on the critical path and achieving performance improvement.
+With a fracturable 6-LUT, larger logic functions are implemented in 6-LUTs reducing the logic levels on the critical path and achieving performance improvement.
 
 > 使用可断裂的6-LUT，可以在6-LUT中实现更大的逻辑功能，从而降低关键路径上的逻辑级别并实现性能改进。
 
@@ -458,15 +489,15 @@ The LB in Stratix II not only increased the performance by 15%, but also reduced
 
 ---
 
-Xilinx later adopted a related fracturable LUT ap-proach in their Virtex-5 architecture.
+Xilinx later adopted a related fracturable LUT approach in their Virtex-5 architecture.
 
-> Xilinx后来在他们的Virtex-5架构中采用了一种相关的可断裂LUT方法。
+> Xilinx后来在其Virtex-5体系结构中采用了相关的可断裂LUT方法。
 
 Like Stratix II, a Virtex-5 6-LUT can be decomposed into two 5-LUTs.
 
 > 与Stratix II一样，Virtex-5 6-LUT可以分解为两个5- lut。
 
-How-ever, Xilinx chose to minimize the extra circuitry added for fracturability as shown in Fig. 5(a)—no extra input routing ports or steering multiplexers are added.
+However, Xilinx chose to minimize the extra circuitry added for fracturability as shown in Fig. 5(a)—no extra input routing ports or steering multiplexers are added.
 
 > 然而，如图5(a)所示，Xilinx选择将增加的额外电路最小化——没有增加额外的输入路由端口或转向多路复用器。
 
@@ -474,19 +505,19 @@ This results in a lower area per fracturable LUT, but makes it more difficult to
 
 > 这导致每个可压裂LUT的面积更小，但使两个较小的LUT组合在一起变得更加困难，因为它们必须使用不超过5个不同的输入[27]。
 
-While sub-sequent architectures from both Altera/Intel and Xilinx have also been based on fracturable 6-LUTs, a recent Mi-crosemi study [28] revisited the 4-LUT vs. 6-LUT efficien-cy trade-off for newer process technologies, CAD tools and designs than those used in [24].
+While subsequent architectures from both Altera/Intel and Xilinx have also been based on fracturable 6-LUTs, a recent Microsemi study [28] revisited the 4-LUT vs. 6-LUT efficien-cy trade-off for newer process technologies, CAD tools and designs than those used in [24].
 
-> 虽然Altera/Intel和Xilinx的后续架构也基于可断裂的6-LUT，但最近Mi-crosemi的一项研究[28]重新审视了4-LUT与6-LUT的效率权衡，以采用比[24]中使用的新工艺技术、CAD工具和设计。
+> 虽然Altera/Intel和Xilinx的后续架构也基于可断裂的6-LUT，但最近Microsemi的一项研究[28]重新审视了4-LUT与6-LUT的效率权衡，以采用比[24]中使用的新工艺技术、CAD工具和设计。
 
 It shows that a LUT structure with two tightly coupled 4-LUTs, one feeding the other, can achieve performance close to plain 6-LUTs along with the area and power advantages of 4-LUTs.
 
 > 结果表明，两个紧密耦合的4-LUT相互馈送的LUT结构可以获得接近普通6-LUT的性能，同时具有4-LUT的面积和功率优势。
 
-In terms of LB size, FPGA architectures from Altera/Intel and Xilinx converged on the use of relatively large LBs with ten and eight BLEs respectively, for several genera-tions.
+In terms of LB size, FPGA architectures from Altera/Intel and Xilinx converged on the use of relatively large LBs with ten and eight BLEs respectively, for several generations.
 
 > 在LB尺寸方面，来自Altera/Intel和Xilinx的FPGA架构在使用相对较大的LB方面进行了几代融合，分别为10个和8个LB。
 
-However, the recently announced Versal architec-ture from Xilinx further increases the number of BLEs per LB to thirty two [29].
+However, the recently announced Versal architecture from Xilinx further increases the number of BLEs per LB to thirty two [29].
 
 > 然而，赛灵思最近宣布的Versal架构进一步将每LB的ble数量增加到32个[29]。
 
@@ -524,9 +555,15 @@ Low-cost multiplexing circuitry allows sharing the existing inputs between the L
 
 > 低成本的多路复用电路允许在lut和ff之间共享现有输入，以避免增加更昂贵的路由端口。
 
-Stratix V also implements FFs as pulse latches instead of edge-triggered FFs.
+Stratix V also implements FFs as pulse latches instead of edgetriggered FFs.
 
 > Stratix V还将FFs实现为脉冲锁存器，而不是边缘触发FFs。
+
+![Figure 6.](./Fig-6.png)
+
+> Figure 6. Circuitry for (a) Master-slave positive-edge-triggered flip-flop, and (b) Pulse latch.
+
+> 图6. 电路用于(a)主从正边触发触发器和(b)脉冲锁存器。
 
 As shown in Fig. 6(b), this removes one of the two latches that would be present in a master-slave FF (Fig. 6(a)), reducing the register delay and area.
 
@@ -536,7 +573,7 @@ A pulse latch acts as a cheaper FF with worse hold time as it latches the data i
 
 > 脉冲锁存器作为一个更便宜的FF，但保持时间更差，因为它在一个非常短的脉冲期间锁存数据输入，而不是像传统FF那样的时钟边缘。
 
-If a pulse genera-tor was built for each FF, the overall area per FF would increase rather than decrease.
+If a pulse generator was built for each FF, the overall area per FF would increase rather than decrease.
 
 > 如果为每个FF建立一个脉冲发生器，则每个FF的总面积将增加而不是减少。
 
@@ -594,6 +631,12 @@ Hardening more sophisticated structures like carry skip adders further improves 
 
 > 强化更复杂的结构，如进位跳加器，进一步提高了速度(在[33]中32位时额外提高了20%的速度)。
 
+![Figure 7.](./Fig-7.png)
+
+> Figure 7. Overview of the hard arithmetic circuitry (in red) in the logic elements of (a) Xilinx and (b) Altera/Intel FPGAs.  A[i] and B[i] are the ith bits of the two addition operands A and B. The Xilinx LEs compute carry propagate and generate in the LUTs, while the Altera/Intel ones use LUTs to pass inputs to the hard adders. Unlabled inputs are unused when implementing adders.
+
+> 图7. (a) Xilinx和(b) Altera/Intel fpga逻辑元件中的硬算术电路概述(红色)。A[i]和B[i]是两个加法操作数A和B的第i位。Xilinx的LEs在lut中进行进位传播和生成，而Altera/Intel的LEs使用lut将输入传递给硬加法器。在实现加法器时不使用未标记的输入。
+
 The latest Versal architecture from Xilinx hardens the carry logic for 8-bit carry look-ahead adders (i.e. the addition can only start on every eighth BLE), while the sum, propagate and generate logic is all implemented in the fracturable 6-LUTs feeding the carry logic as shown in Fig. 7(a) [29].
 
 > 赛灵思最新的Versal架构强化了8位进位前瞻加法器的进位逻辑(即加法只能在每8个BLE开始)，而求和、传播和生成逻辑都是在可断裂的6- lut中实现的，如图7(a)所示[29]。
@@ -620,17 +663,17 @@ It also concludes that having dedicated arithmetic circuits (i.e. hardening adde
 
 ---
 
-Recently, deep learning (DL) has become a key work-load in many end-user applications, with its core opera-tion being multiply-accumulate (MAC).
+Recently, deep learning (DL) has become a key workload in many end-user applications, with its core operation being multiply-accumulate (MAC).
 
 > 近年来，深度学习(DL)已成为许多终端用户应用的关键工作负载，其核心操作是乘法累加(MAC)。
 
-Generally, MACs can be implemented in DSP blocks as will be described in Section III-E; however low-precision MACs with 8-bit or narrower operands (which are becoming increasingly popular in DL workloads) can also be implemented ef-ficiently in the programmable logic [9].
+Generally, MACs can be implemented in DSP blocks as will be described in Section III-E; however low-precision MACs with 8-bit or narrower operands (which are becoming increasingly popular in DL workloads) can also be implemented efficiently in the programmable logic [9].
 
-> 一般来说，mac可以在DSP块中实现，如第III-E节所述;然而，具有8位或更窄操作数的低精度mac(在DL工作负载中越来越流行)也可以在可编程逻辑中高效实现[9]。
+> 一般来说，mac可以在DSP块中实现，如第III-E节所述;然而，具有8位或更窄操作数的低精度mac(在DL工作负载中越来越流行)也可以在可编程逻辑中有效地实现[9]。
 
-LUTs are used to generate the partial products of a multiplier array fol-lowed by an adder tree to reduce the partial products and perform the accumulation.
+LUTs are used to generate the partial products of a multiplier array followed by an adder tree to reduce the partial products and perform the accumulation.
 
-> lut用于生成乘法器数组的部分乘积，然后使用加法器树来减少部分乘积并执行累加。
+> LUT用于生成乘法器数组的部分乘积，然后使用加法器树来减少部分乘积并执行累加。
 
 Consequently, multiple recent studies [35]–[37] have investigated increasing the density of hardened adders in the FPGA’s logic fabric to enhance its performance when implementing arithmetic-heavy applications such as DL acceleration.
 
@@ -640,9 +683,9 @@ The work in [36] and [37] proposed multiple different logic block architectures 
 
 > [36]和[37]中的工作提出了多种不同的逻辑块架构，其中每个逻辑元素包含4位算术，排列在一个或两个具有不同配置的进位链中，而不是在类似Intel stratix的ALM中仅包含2位算术。
 
-These proposals do not require increas-ing the number of the (relatively expensive) routing ports in the logic clusters when implementing multiplications due to the high degree of input sharing in a multiplier ar-ray (i.e. for an N-bit multiplier, only 2 N inputs are needed to generate N2 partial products).
+These proposals do not require increasing the number of the (relatively expensive) routing ports in the logic clusters when implementing multiplications due to the high degree of input sharing in a multiplier array (i.e. for an N-bit multiplier, only 2 N inputs are needed to generate N^2 partial products).
 
-> 这些建议在实现乘法时不需要增加逻辑集群中(相对昂贵的)路由端口的数量，因为乘法器ar射线中的输入共享程度很高(即对于N位乘法器，只需要2n个输入就可以生成N2个部分乘积)。
+> 这些建议在实现乘法时不需要增加逻辑集群中路由端口的数量(相对昂贵)，因为乘法器阵列中的输入共享程度很高(即对于N位乘法器，只需要2n个输入来生成N^2个部分乘积)。
 
 The most promising of these proposals increases the density of MAC operations by .1 7 # while simultaneously improving their speed.
 
@@ -679,6 +722,12 @@ Hierarchical FPGAs are inspired by the fact that designs are inherently hierarch
 Communication is more frequent between modules that are near each other in the design hierarchy, and hierarchical FPGAs can realize these connections with short wires that connect small regions of a chip.
 
 > 在设计层次中彼此靠近的模块之间的通信更加频繁，而分层fpga可以通过连接芯片小区域的短导线来实现这些连接。
+
+![Figure 8](./Fig-8.png)
+
+> Figure 8. Routing architecture in hierarchical FPGAs.
+
+> 图8. 分层fpga中的路由体系结构。
 
 As shown in Fig. 8, to communicate to more distant regions of a hierarchical FPGA, a connection (highlight-ed in red) passes through multiple wires and switches as it traverses different levels of the interconnect hierarchy.
 
@@ -788,21 +837,21 @@ This means each logic block is a small cluster in a hierarchical FPGA; island-st
 
 ---
 
-There has been a great deal of research into the op-timal amount of switching, and how to best arrange the switches.
+There has been a great deal of research into the optimal amount of switching, and how to best arrange the switches.
 
-> 关于开关的最优量以及开关的最佳排列方式，人们进行了大量的研究。
+> 关于开关的最优量以及开关的最佳排列，人们进行了大量的研究。
 
 While there are many detailed choices, a few principles have emerged.
 
 > 虽然有许多详细的选择，但已经出现了一些原则。
 
-The first is that the connectiv-ity between function block pins and wires ( Fc ) can be relatively low: typically only 10% or less of the wires that pass by a pin will have switches to connect to it.
+The first is that the connectivity between function block pins and wires ( Fc ) can be relatively low: typically only 10% or less of the wires that pass by a pin will have switches to connect to it.
 
 > 首先是功能块引脚和导线(Fc)之间的连接性相对较低:通常只有10%或更少的导线通过引脚将有开关连接到它。
 
-Simi-larly, the number of other wires that a routing wire can connect to at its end ( Fs ) can also be low, but it should be at least 3 so that a signal can turn left, right, or go straight at a wire end point.
+Similarly, the number of other wires that a routing wire can connect to at its end ( Fs ) can also be low, but it should be at least 3 so that a signal can turn left, right, or go straight at a wire end point.
 
-> 同样，布线线在其末端(f)可以连接的其他导线的数量也可以很低，但至少应该是3，以便信号可以向左、向右或在导线末端直走。
+> 类似地，布线线在其末端(f)可以连接的其他导线的数量也可以很低，但至少应该是3，以便信号可以向左、向右或在导线末端直走
 
 The local routing in a logic cluster (described in Section III-A) allows some block inputs and some block outputs to be swapped during routing.
 
